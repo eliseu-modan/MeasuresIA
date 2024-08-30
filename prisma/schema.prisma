@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model ImageProcessing {
+  id               Int      @id @default(autoincrement())
+  customer_code    String
+  measure_uuid     String   @unique
+  measure_datetime String
+  measure_type     String
+  measure_value    Int
+  has_confirmed    Boolean
+  image_url        String
+}

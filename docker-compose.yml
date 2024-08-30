@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: mysql://root:SENHA-MYSQL-LOCAL@host.docker.internal:3306/systemMeasure
+
